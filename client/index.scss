@@ -1,0 +1,28 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+@import 'styles/_variables';
+@import 'templates/users/resume/resume';
+@import 'templates/users/resume/progress';
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+md-content.md-default-theme {
+  background-color: #eeeeee;
+}
+
+.app-layout {
+  position: fixed;
+}
+
+.text-color-gray {
+  color: $gray;
+}
+
+.text-color-blue {
+  color: $blue;
+}
+
+.text-color-brown {
+  color: $brown;
+}
