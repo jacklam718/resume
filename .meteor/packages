@@ -24,7 +24,7 @@ cosmos:browserify
 angularui:angular-ui-router
 fourseven:scss
 sebhero:angular-material-icons
-wow
-material-colors
 email
 gfk:mailgun-api
+jacklam:material-colors
+jacklam:meteor-wowjs
