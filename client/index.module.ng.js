@@ -1,4 +1,4 @@
-angular.module('index', [
+angular.module('app', [
   'angular-meteor',
   'ngAnimate',
   'ngMaterial',

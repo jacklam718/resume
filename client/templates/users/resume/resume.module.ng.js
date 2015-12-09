@@ -10,9 +10,7 @@ module.config(function($stateProvider) {
 })
 .directive('skillsProgress', function () {
   var self = this;
-  console.log(self);
   self.templateUrl = 'client/templates/users/resume/_progress.ng.html';
-  self.transclude = true;
   self.scope = {
     title: '@',
     grade: '@'
@@ -23,6 +21,34 @@ module.config(function($stateProvider) {
 
   return self;
 })
-.controller('ResumeCtrl', function($scope, $window) {
+.controller('ResumeCtrl', function($scope, $meteor, $window, $mdToast) {
   new WOW({scrollContainer: 'md-content'}).init();
+
+  $scope.sendEmail = function () {
+    $scope.contact.senddingEmail = true;
+    var form = angular.copy($scope.contact.form);
+
+    if (form.name) {
+      form.from = [form.name, '<', form.from, '>'].join('');
+    }
+
+    $meteor.call('sendEmail', form).then(function (resp) {
+      $scope.contact.senddingEmail = false;
+      $scope.contact.form = {
+        to: 'jacklam718@gmail.com'
+      };
+
+      $mdToast.show({
+        hideDelay: 4000,
+        position: 'top right',
+        template: [
+          '<md-toast class="md-toast notification bg-green-500 color-white">',
+            '<p>Email Sent. <ng-md-icon icon="check_circle"></ng-md-icon></p>',
+          '</md-toast>'
+        ].join('')
+      });
+    }, function(err) {
+      console.error(err);
+    });
+  }
 });

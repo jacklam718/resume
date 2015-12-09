@@ -23,9 +23,18 @@
                   A bit about me
                 </p>
                 <p class="wow fadeIn resume-intro-content color-grey-700">
-                  I am Jack 24 years old, school drop-out, self-taught software developer, codes on a daily basis, I love coding and I love create interesting apps.
+                  My name is Jack 24 years old, school drop-out, self-taught software developer, codes on a daily basis, I love coding and I love create interesting apps.
                   <br>
-                  My interests, currently I am interested in web frontend, web backend and hybrid web app development.
+                  <br>
+                  <!-- My interests, currently I am interested in web frontend, web backend and hybrid app development. -->
+                  <!-- About my interests, I interested in the Internet protocol & Networking then I wrote an FTP server & client to understand how the FTP protocol works
+                  and tried to write a VNC application, but it failed because the RFB protocol It is a bit complicated especially the encryption & encryption part.
+
+                  I also interested in Internet security so I wrote a simple MITM tool for fun and for learning some protocols security flaw.
+
+                  Current I also interested in web development, backend & frontend (temporarily want to focus on frontend). -->
+
+                  About my interests, I interested in Internet Protocol, Networking, Internet Security, Web Development (backend & frontend)
                 </p>
               </div>
 
@@ -34,7 +43,7 @@
                   GITHUB
                   <ng-md-icon icon="github-circle"></ng-md-icon>
                 </md-button>
-                <md-button class="resume-intro-link contact-link">
+                <md-button href="#contact" class="resume-intro-link contact-link">
                   CONACT ME
                   <ng-md-icon icon="email"></ng-md-icon>
                 </md-button>
@@ -189,7 +198,10 @@
               <span class="resume-exp-job-present-date color-blue-500">
                 14 July 2014
               </span>
-              <p>
+              <p data-wow-delay="0.5s" class="wow fadeIn color-grey-600" style="text-align: justify;">
+                My first IT-related job, on 42labs I worked on front-end and back-end.
+                I work at this company before I just know the Python programming language,
+                so I learned Angular, JavaScript, HTML, CSS, Ruby, Rails in the same time on this company.
               </p>
             </md-card-content>
           </md-card>
@@ -204,7 +216,15 @@
               <span class="resume-exp-job-present-date color-blue-500">
                 01 March 2015
               </span>
-              <p>
+              <p data-wow-delay="0.8s" class="wow fadeIn color-grey-600" style="text-align: justify;">
+                On GoGoVan, I mainly work on web front-end.
+                Usually, I use NodeJs and AngularJs in my work.
+                Work at GoGoVan makes me become a better developer
+                because I have faced many challenges and learned a lot of things,
+                for example: how to create the general purpose web components
+                for GoGoVan itself, write reusable code for the different country
+                sites (not copy and paste) and how to write modular javascript make
+                our projects more flexible and maintainable.
               </p>
             </md-card-content>
           </md-card>
@@ -212,7 +232,7 @@
       </div>
     </section>
 
-    <section class="resume-contact">
+    <section id="contact" class="resume-contact">
       <div class="section-title wow fadeIn">
         <p class="md-display-1 headline color-grey-700">
           Contact
@@ -220,26 +240,37 @@
       </div>
       <md-card>
         <md-card-content>
-          <form name="resumeCtrl.contactForm">
-            <div class="" layout="row" layout-sm="column">
+          <form name="contact" ng-submit="sendEmail()">
+            <div class="" layout="column">
               <md-input-container class="wow fadeIn" flex>
                 <label>Name *</label>
-                <input ng-model="resumeCtrl.contactForm.name">
+                <input ng-required="true" ng-model="contact.form.name">
               </md-input-container>
               <md-input-container class="wow fadeIn" flex>
-                <label>Email *</label>
-                <input ng-model="resumeCtrl.contactForm.email">
+                <label>From *</label>
+                <input ng-required="true" type="email" ng-model="contact.form.from">
               </md-input-container>
-            </div>
-            <div class="" layout="column">
+              <md-input-container class="wow fadeIn" flex>
+                <label>To *</label>
+                <input
+                  ng-required="true"
+                  type="email"
+                  ng-model="contact.form.to"
+                  ng-init="contact.form.to = 'jacklam718@gmail.com';"
+                >
+              </md-input-container>
               <md-input-container class="wow fadeIn" data-wow-delay="0.4s" flex>
                 <label>Subject *</label>
-                <input ng-model="resumeCtrl.contactForm.subject">
+                <input ng-required="true" ng-model="contact.form.subject">
               </md-input-container>
               <md-input-container class="wow fadeIn" data-wow-delay="0.4s" flex>
                 <label>Message *</label>
-                <textarea ng-model="resumeCtrl.contactForm.content"></textarea>
+                <textarea ng-required="true" ng-model="contact.form.text"></textarea>
               </md-input-container>
+            </div>
+
+            <div ng-if="contact.senddingEmail" layout="row" layout-sm="column" layout-align="space-around">
+              <md-progress-circular md-mode="indeterminate"></md-progress-circular>
             </div>
 
             <div class="wow fadeIn" data-wow-delay="0.4s" layout="row" layout-align="center center">

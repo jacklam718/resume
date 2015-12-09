@@ -8,7 +8,9 @@ Meteor.methods({
     });
 
     if (options.to === 'jacklam718@gmail.com') {
-      mailgun.send(options);
+      return mailgun.send(options);
     }
+
+    return 'send email failed';
   }
 });
