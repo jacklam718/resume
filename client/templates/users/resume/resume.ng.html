@@ -7,7 +7,7 @@
           <div layout="row" align="center" layout-align="center center">
             <div flex flex-gt-sm="80">
               <div class="wow fadeInDown resume-intro-pic">
-                <img src="images/me2.jpeg" alt="">
+                <img src="images/me3.jpg" alt="">
               </div>
               <div class="resume-intro-container">
                 <h2 class="wow fadeIn color-grey-700">
@@ -228,6 +228,101 @@
           </md-card>
         </div>
       </div>
+    </section>
+
+    <section class="resume-projects" >
+      <div class="section-title" align="center">
+        <h1 class="wow fadeIn md-display-1 headline color-grey-700">
+          Projects
+        </h1>
+      </div>
+
+      <section>
+        <md-card layout="row" layout-md="column" layout-sm="column">
+          <md-card class="resume-project-card" flex>
+            <img ng-src="{{'//www.gogovan.com.hk/img/home_hero_pet.jpg'}}" class="md-card-image" alt="">
+            <md-card-content>
+              <h2 class="md-title">
+                <a href="https://www.gogovan.com.hk/" target="_blank" class="color-blue-500">
+                  <span class="md-headline">GoGoVan website (HK)</span>
+                </a>
+              </h2>
+
+              <p class="resume-project-desc">
+                GoGoVan是香港網上貨運物流平台，24小時提供最專業的貨運服務，智能手機30秒call貨Van和貨車，隨時隨地隨叫隨到。
+              </p>
+            </md-card-content>
+
+            <div class="md-actions" layout="row" layout-align="end center">
+              <md-button class="md-raised" ng-click="onOpenProjectDialog('gogovan-hk', $event)">
+                More
+              </md-button>
+            </div>
+          </md-card>
+
+          <md-card class="resume-project-card" flex>
+            <img ng-src="{{'http://www.kuaigou.co/img/hero.jpg'}}" class="md-card-image" alt="">
+            <md-card-content>
+              <h2 class="md-title">
+                <a href="http://www.kuaigou.co/" target="_blank" class="color-blue-500">
+                  GoGoVan website (CN)
+                </a>
+              </h2>
+
+              <p class="resume-project-desc">
+                快狗速运是最快、最好、价钱最公道的即时/预约送货服务的物流平台。半分钟内找到货车送货，车队涵盖小面包车、金杯、货车等，24小时专业的同城货运服务，省时省力。
+              </p>
+            </md-card-content>
+
+            <div class="md-actions" layout="row" layout-align="end center">
+              <md-button class="md-raised" ng-click="onOpenProjectDialog('gogovan-cn', $event)">
+                More
+              </md-button>
+            </div>
+          </md-card>
+
+          <md-card class="resume-project-card" flex>
+            <img ng-src="{{'https://www.gogovan.sg/img/hero_bg2@2x.jpg'}}" class="md-card-image" alt="">
+            <md-card-content>
+              <h2 class="md-title">
+                <a href="https://www.gogovan.sg/" target="_blank" class="color-blue-500">
+                  GoGoVan website (SG)
+                </a>
+              </h2>
+
+              <p class="resume-project-desc">
+                Same day courier, delivery and moving service across Singapore for individuals and businesses
+              </p>
+            </md-card-content>
+
+            <div class="md-actions" layout="row" layout-align="end center">
+              <md-button class="md-raised" ng-click="onOpenProjectDialog('gogovan-sg', $event)">
+                More
+              </md-button>
+            </div>
+          </md-card>
+
+          <md-card class="resume-project-card" flex>
+            <img ng-src="{{'http://www.chefconnect.hk/_/rsrc/1443839134931/config/pagetemplates/template01/Home_TopBanner_01.jpg'}}" class="md-card-image" alt="">
+            <md-card-content>
+              <h2 class="md-title">
+                <a href="http://www.chefconnect.hk/" target="_blank" class="color-blue-500">
+                  ChefConnect
+                </a>
+              </h2>
+              <p class="resume-project-desc">
+                Online food ordering service
+              </p>
+            </md-card-content>
+
+            <div class="md-actions" layout="row" layout-align="end center">
+              <md-button class="md-raised" ng-click="onOpenProjectDialog('chefconnect', $event)">
+                More
+              </md-button>
+            </div>
+          </md-card>
+        </md-card>
+      </section>
     </section>
 
     <section id="contact" class="resume-contact">

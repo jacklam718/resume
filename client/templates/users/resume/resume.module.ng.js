@@ -21,8 +21,43 @@ module.config(function($stateProvider) {
 
   return self;
 })
-.controller('ResumeCtrl', function($scope, $meteor, $window, $mdToast) {
+.controller('ResumeCtrl', function($scope, $meteor, $window, $mdToast, $mdDialog) {
   new WOW({scrollContainer: 'md-content'}).init();
+
+  $scope.onOpenProjectDialog = function (projectKey, ev) {
+    $mdDialog.show({
+      controller: function($scope) {
+        $scope.onCloseDialog = function() {$mdDialog.hide();};
+        $scope.project = {
+          'gogovan-hk': {
+            name: 'GoGoVan HK',
+            role: 'front end',
+            stacks: 'AngularJs, Jquery, KOA'
+          },
+          'gogovan-cn': {
+            name: 'GoGoVan CN',
+            role: 'front end',
+            stacks: 'AngularJs, Jquery, KOA'
+          },
+          'gogovan-sg': {
+            name: 'GoGoVan SG',
+            role: 'front end',
+            stacks: 'AngularJs, Jquery, KOA'
+          },
+          'chefconnect': {
+            name: 'ChefConnect',
+            role: 'front end + back end',
+            stacks: 'AngularJs, Jquery, Ruby on Rails'
+          }
+        }[projectKey];
+
+      },
+      templateUrl: 'client/templates/users/resume/_project.dialog.ng.html',
+      parent: angular.element(document.body),
+      targetEvent: ev,
+      clickOutsideToClose: true
+    });
+  };
 
   $scope.sendEmail = function () {
     $scope.contact.senddingEmail = true;
